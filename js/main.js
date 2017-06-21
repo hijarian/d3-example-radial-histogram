@@ -11,7 +11,6 @@ var radius = d3.scaleLinear()
     .domain([0,10])
     .range([0,GRAPH_RADIUS]);
 
-
 var getAreaTitle = function (area) { return area.title; };
 var areaTitles = data.map(getAreaTitle);
 
@@ -29,21 +28,11 @@ var areaHighlightSector = d3.arc()
     .innerRadius(0)
     .outerRadius(maxRadius); // generalized max radius of the highlight sector
 
-// console.debug(maxRadius);
-// console.debug(areasPie(data));
-// console.debug(areaHighlightSector(areasPie(data)[0]));
-
 var areaColorFromData = function (data) { return areaColor(getAreaTitle(data.data)); };
 
 var areaAchievedSector = d3.arc()
     .innerRadius(0)
     .outerRadius(function (data) { return radius(data.data.level); });
-
-var circleAroundGraph = d3.arc()
-    .innerRadius(0)
-    .outerRadius(maxRadius)
-    .startAngle(0)
-    .endAngle(Math.PI * 2);
 
 var topHalfOfCircleAroundGraph = d3.arc()
     .innerRadius(0)
@@ -92,11 +81,6 @@ graph.selectAll('.radial-ruler')
     .append('circle')
     .attr('class', function (data) { return data < d3.max(levels) ? 'radial-ruler' : 'radial-ruler radial-ruler--max-level'; })
     .attr('r', radius);
-
-graph.append('path')
-    .attr('class', 'invisible-text-path')
-    .attr('d', circleAroundGraph)
-    .attr('id', 'OuterTextPath');
 
 graph.append('path')
     .attr('class', 'invisible-text-path')
