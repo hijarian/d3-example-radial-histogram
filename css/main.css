@@ -1,0 +1,71 @@
+.radial-ruler {
+    fill: none;
+    stroke-width: 1;
+    stroke-dasharray: 3,3;
+    stroke: #666;
+}
+
+.radial-ruler--max-level {
+    stroke-width: 2;
+    stroke-dasharray: none;
+}
+
+.area-highlight-sector {
+    stroke-width: 1;
+    stroke: black;
+    opacity: 0.25;
+}
+
+.area-achieved-sector {
+    stroke: none;
+    opacity: 0.9;
+}
+
+.area-level-label {
+    font: bold 12pt Verdana,Helvetica,Arial,sans-serif;
+}
+
+.area-label {
+    font: bold 12pt Verdana,Helvetica,Arial,sans-serif;
+}
+
+.sector:hover > .area-highlight-sector {
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.sector:hover > .area-achieved-sector {
+    transition: all 0.3s;
+}
+
+.sector:hover > .area-level-label {
+    fill: darkred;
+    font-size: 200%;
+    font-weight: 900;
+    transition: all 0.3s;
+}
+
+.sector:hover > .area-label {
+    fill: darkred;
+    font-size: 110%;
+    font-weight: 900;
+    transition: all 0.3s;
+}
+
+.sector:hover > .level-point {
+    fill: darkred;
+    transition: all 0.3s;
+}
+
+.invisible-text-path {
+    stroke: none;
+    fill: none;
+}
+
+.stats-radial-line {
+    stroke: gold;
+    stroke-width: 2;
+    fill: none;
+    opacity: 0.9;
+    stroke-dasharray: 2,2;
+}
