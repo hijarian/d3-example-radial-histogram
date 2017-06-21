@@ -2,7 +2,7 @@
 
 This is an example of displaying radial chart using [d3.js](https://d3js.org/) for the data in the following format:
 
-```json
+```javascript
 [
     {
         title: "Творчество",
